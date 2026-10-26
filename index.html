@@ -46,14 +46,15 @@ header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 4px 30px rg
 header .container{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
 .logo img{height:52px;width:auto}
 nav ul{display:flex;gap:32px;list-style:none}
-nav a{font-weight:600;font-family:"Plus Jakarta Sans";color:var(--heading);font-size:15px;position:relative;padding:6px 0}
+nav a{white-space:nowrap;font-weight:600;font-family:"Plus Jakarta Sans";color:var(--heading);font-size:15px;position:relative;padding:6px 0}
 nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--primary);transition:.3s}
 nav a:hover{color:var(--primary)}nav a:hover::after{width:100%}
 .header-cta{display:flex;align-items:center;gap:18px}
 .call-box{display:flex;align-items:center;gap:12px}
 .call-box .ic{width:46px;height:46px;border-radius:50%;background:var(--sky);display:grid;place-items:center;color:var(--primary)}
 .call-box small{display:block;font-size:12px;color:var(--text)}
-.call-box strong{font-family:"Plus Jakarta Sans";color:var(--heading)}
+.call-box strong{font-family:"Plus Jakarta Sans";color:var(--heading);white-space:nowrap}
+.btn{white-space:nowrap}
 .burger{display:none;background:none;border:0;cursor:pointer;color:var(--navy)}
 .burger svg{width:30px;height:30px}
 
@@ -237,8 +238,9 @@ footer ul a:hover{color:#fff}
 .reveal.in{opacity:1;transform:none}
 
 /* Responsive */
+@media(max-width:1300px){header .call-box{display:none}nav ul{gap:24px}}
 @media(max-width:1080px){
-  nav ul{gap:22px}.call-box{display:none}
+  nav ul{gap:18px}
   .infobar .grid{grid-template-columns:1fr 1fr}
   .infobar .cell{border-bottom:1px solid var(--line)}
   .why .grid{grid-template-columns:1fr 1fr}.why-img{display:none}
